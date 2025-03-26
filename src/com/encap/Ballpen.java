@@ -10,8 +10,11 @@ public class Ballpen {
     String brand;
     float point;
     int price;
+    String color;
+    String manufacturer = "China";
     
-    // default construtor
+
+    // default constructor
     public Ballpen(){
         
     }
@@ -28,14 +31,28 @@ public class Ballpen {
         System.out.println("Price: " + price);
     }
     
-}
-
-
-
-class Printer {
-    public static void main(String[] args) {
-        Ballpen ballpen = new Ballpen("HBW", 0.5f, 15);
-        
+    
+    
+    public Ballpen(String brand, float point, int price, String color, String manufacturer){
+        this.brand = brand;
+        this.point = point;
+        this.price = price;
+        this.color = color;
     }
+    
+    
+
+    @Override
+    public String toString() { // String representation of object
+        return "Ballpen{" + "brand=" + brand + ", point=" + point + ", price=" + price + ", color=" + color + ", manufacturer=" + manufacturer + '}';
+    }
+    
+    
+    
+    
 }
+
+
+
+
 

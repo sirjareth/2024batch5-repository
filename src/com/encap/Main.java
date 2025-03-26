@@ -11,7 +11,27 @@ import java.util.Scanner;
 public class Main {
     
     public static void main(String[] args) {
-        userRegistration();
+//        Scanner sc = new Scanner(System.in);
+//        System.out.print("Enter brand: ");
+//        String brand = sc.nextLine();
+//        System.out.print("Enter point: ");
+//        float point = sc.nextFloat();
+//        System.out.print("Enter price: ");
+//        int price = sc.nextInt();
+        
+        Ballpen ballpen1 = new Ballpen("panda", 0.5f, 50, "blacak", "India");
+        System.out.println(ballpen1);
+    }
+    
+}
+
+
+/*
+    public static void main(String[] args) {
+        User user = new User();
+        System.out.println(user);
+        
+        //userRegistration();
         
     }
     
@@ -32,4 +52,4 @@ public class Main {
         String firstName = user1.getFirstName();
         System.out.println("First Name: " + firstName);
     }
-}
+*/

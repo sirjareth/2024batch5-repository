@@ -13,6 +13,11 @@ package com.encap;
     Constructor
 */
 
+// MVC Arc
+
+
+
+// static variable
 
 public class User {
     private int id; //2024001 
@@ -24,9 +29,13 @@ public class User {
 
     // Construtor
     
+    // field / attributes / members / variable
+    
+    
     
     // Mutator Method / Setter Method
     public void setId(int id){
+        
         // private field = parameter;
         this.id = id;
     }
@@ -44,6 +53,16 @@ public class User {
     public String getFirstName(){
         return firstName;
     }
+
+    
+    
+    @Override
+    public String toString() {
+        return "Object is created!";
+    }
+    
+    
+    
     
     
 }
