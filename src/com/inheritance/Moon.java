@@ -6,7 +6,9 @@
 package com.inheritance;
 
 
+
 public class Moon extends Sun{
+     
     boolean hasCraters = true;
     
     public boolean hasCraters(){

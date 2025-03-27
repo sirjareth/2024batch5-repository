@@ -3,15 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.inheritance;
+package com.polymorphism;
 
-
-public class Earth extends Moon{
+// Method Overriding
+public class Animal {
     
-    public boolean hasPeople = true;
-    
-    public boolean hasPeople(){
-        return hasPeople;
-    }
-    
+    void eat(){}
 }

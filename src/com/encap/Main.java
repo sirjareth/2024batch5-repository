@@ -19,8 +19,10 @@ public class Main {
 //        System.out.print("Enter price: ");
 //        int price = sc.nextInt();
         
-        Ballpen ballpen1 = new Ballpen("panda", 0.5f, 50, "blacak", "India");
+        Ballpen ballpen1 = new Ballpen();
         System.out.println(ballpen1);
+        
+        
     }
     
 }
