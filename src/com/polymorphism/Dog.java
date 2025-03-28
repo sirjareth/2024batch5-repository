@@ -10,7 +10,18 @@ public class Dog extends Animal{
     
     
     @Override
-    public void eat(){
-        System.out.println("brunch brunch....");
+    public void diet(){
+        System.out.println("omnivore");
     }
+    
+    @Override
+    public void eat(){
+        System.out.println("crunch crunch...");
+    }
+    
+    @Override
+    public void walk(){
+        System.out.println("sun walk....");
+    }
+    
 }

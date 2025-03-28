@@ -7,18 +7,43 @@ package com.polymorphism;
 
 
 public class Cat extends Animal{
-    // default protected public
     
+    
+   @Override
+   public void walk(){
+       System.out.println("moon walk...");
+   }
+   
+
     @Override
-    public void eat(){
-        System.out.println("Munch munch....");
+    public void diet() {
+        System.out.println("herbivore");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("munch munch..");
     }
     
-  
-    void eat(String food){
-    
-    }
+   
     
 }
+ 
 
-// static, private, final
+
+/*
+     static final double PI = 3.14; // static constant
+
+    
+    public final static void main(String[] args) {
+ 
+    }
+    
+    // static, private, final -> 
+    
+    // this -> refer immediate class object
+    // super -> refer immediate parent object
+    
+    // non - access modifiers -> static, final, abstract
+    // access modifiers -> public, protected, default, private
+*/

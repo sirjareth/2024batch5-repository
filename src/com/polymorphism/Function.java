@@ -11,9 +11,7 @@ public class Function {
     
     public static void main(String[] args) {
         Function f = new Function();
-        f.jump(10);
-        
-        
+        f.jump();
     }
     
 

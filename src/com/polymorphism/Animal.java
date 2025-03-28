@@ -6,7 +6,15 @@
 package com.polymorphism;
 
 // Method Overriding
-public class Animal {
+public abstract class Animal {
     
-    void eat(){}
+    public abstract void diet();
+    
+    public abstract void eat();
+    
+    public abstract void walk(); // abstract method
+    
+    public static final void method(){
+        
+    }
 }
