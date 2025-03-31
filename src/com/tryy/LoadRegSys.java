@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.load_reg;
+package com.tryy;
 
 import java.util.Scanner;
 
@@ -12,13 +12,12 @@ public class LoadRegSys {
     private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        displayMainMenu();
+        displayPrompt();
         sc.close();
-        
     }
 
-    
-    public static void displayMainMenu() {
+    public static void displayPrompt() {
+
         System.out.println("===========================");
         System.out.println("     Load Registration     ");
         System.out.println("===========================");
@@ -26,101 +25,95 @@ public class LoadRegSys {
         System.out.println("Select a promo: ");
         System.out.println("    [1] Text Only");
         System.out.println("    [2] Call Only");
-        System.out.println("    [3] Call n Text");
-        System.out.println("    [4] GoSurf");
-        System.out.println("    [5] Exit");
+        System.out.println("    [3] GoSurf");
+        System.out.println("    [4] Exit");
         System.out.print("Enter a choice: ");
-        byte promoChoice = sc.nextByte();
-        sc.nextLine(); // consume excess ch
+
+
+
+        byte promoChoice= sc.nextByte();
         switch (promoChoice) {
             case 1:
-                unliTextPromo("Unli Text");
+                unliTextPromo();
                 break;
             case 2:
-                unliCallPromo("Unli Call");
+                unliCallPromo();
                 break;
             case 3:
-                //goSurfPromo
                 break;
             case 4:
-                exitProgram();
-                break;
-            default:
-                System.out.println("Invalid Input. Press 1 - 5 only!");
-                displayMainMenu();
+                return; // exit back to main
+            case 5:
+                System.out.println("Invalid choice!");
         }
+
     }
 
-    public static void unliTextPromo(String promoType) {
+    public static void unliTextPromo() {
+
         System.out.println("\nEnjoy Unli Text Promo: ");
         System.out.println("    [1] 1 Day,  ₱10");
         System.out.println("    [2] 2 Days, ₱20");
         System.out.println("    [3] 5 Days, ₱50");
         System.out.println("    [4] 7 Days, ₱60");
-        System.out.println("    [5] Back");
-        System.out.println("    [6] Exit");
         System.out.print("Enter a choice: ");
-        byte textPromoChoice = sc.nextByte();
+        byte textPromoChoiceDuration = sc.nextByte();
 
-        switch (textPromoChoice) {
+        String promoType = "Unli Text";
+        switch (textPromoChoiceDuration) {
             case 1:
                 // 1 Day
-                subscribe(1, promoType);
+                confirmToSubscribe(1, promoType);
                 break;
             case 2:
                 // 2 Days
-                subscribe(2, promoType);
+                confirmToSubscribe(2, promoType);
                 break;
             case 3:
                 // 5 Days
-                subscribe(5, promoType);
+                confirmToSubscribe(5, promoType);
                 break;
             case 4:
                 // 7 Days
-                subscribe(7, promoType);
-                break;
-            case 5:
-                displayMainMenu();
-                break;
-            case 6:
-                exitProgram();
+                confirmToSubscribe(7, promoType);
                 break;
         }
     }
 
-    public static void unliCallPromo(String promoType) {
+    public static void unliCallPromo() {
+
         System.out.println("\nEnjoy Unli Call Promo: ");
         System.out.println("    [1] 1 Day,  ₱20");
         System.out.println("    [2] 2 Days, ₱30");
         System.out.println("    [3] 5 Days, ₱60");
         System.out.println("    [4] 7 Days, ₱80");
-        System.out.println("    [5] Back");
-        System.out.println("    [6] Exit");
         System.out.print("Enter a choice: ");
-        byte callPromoChoice = sc.nextByte();
+        byte callPromoChoiceDuration = sc.nextByte();
 
-        switch (callPromoChoice) {
+        String promoType = "Unli Call";
+        switch (callPromoChoiceDuration) {
             case 1:
                 // 1 Day
-                subscribe(1, promoType);
+                confirmToSubscribe(1, promoType);
                 break;
             case 2:
                 // 2 Days
-                subscribe(2, promoType);
+                confirmToSubscribe(2, promoType);
                 break;
             case 3:
                 // 5 Days
-                subscribe(5, promoType);
+                confirmToSubscribe(5, promoType);
                 break;
             case 4:
                 // 7 Days
-                subscribe(7, promoType);
+                confirmToSubscribe(7, promoType);
                 break;
         }
     }
 
-    public static void subscribe(int promoDuration, String promoType) {
-        System.out.println("\n  [1] Subsrcibe");
+    public static void confirmToSubscribe(int callPromoChoiceDuration, String promoType) {
+
+        System.out.println("\n  [1] Subscibe");
         System.out.println("  [2] Back    ");
         System.out.println("  [3] Exit    ");
         System.out.print("Enter a choice: ");
@@ -128,27 +121,28 @@ public class LoadRegSys {
 
         if (choice == 1) {
             System.out.println("\nCongratulations! You are now subscribe to "
-                    + promoType + " for " + promoDuration + " Day(s)");
+                    + promoType + " for " + callPromoChoiceDuration + " Day(s)");
         } else if (choice == 2) {
-            
+
         } else {
             System.out.println("*** Thank you ***");
-        }
-    }
-    
-    
-    public static void exitProgram(){
-        System.out.println("Are you sure you want to exit? \n\t[Y] Yes \n\t[N] No");
-        System.out.println("Enter a choice: ");
-        char choice = sc.nextLine().charAt(0);
-        if (choice == 'y' || choice == 'Y') {
-            System.out.println("Exiting.....");
-            System.exit(0); // Exit the program immediately (JVM)
-            
-        } else {
-            System.out.println("Failed to Exit\n\n\n");
-            displayMainMenu();
+            System.exit(0); // // Exits program immediately (JVM) 
         }
     }
 
 }
+
+//        // checking for valid byte input
+//        byte promoChoice;
+//        if (sc.hasNextByte()) {
+//            promoChoice = sc.nextByte();
+//            sc.nextLine();
+//        } else {
+//            System.out.println("Invalid input! Please enter a number.");
+//            sc.nextLine(); // Consume invalid input
+//            displayPrompt(); // Restart the prompt
+//            return;
+//        }
+/*
+    
+*/
