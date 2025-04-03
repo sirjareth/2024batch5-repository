@@ -16,10 +16,11 @@ public class Main {
         System.out.println(moon.hasLight());
         System.out.println(moon.hasCraters());
         
+        
         Earth earth = new Earth();
         System.out.println(earth.hasLight());
         System.out.println(earth.hasCraters());
-        System.out.println(earth.hasPeople());  
-      
+        System.out.println(earth.hasPeople());   
+        
     }
 }
